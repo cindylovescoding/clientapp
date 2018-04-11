@@ -1,0 +1,98 @@
+<p *ngIf="!forecasts"><em>Loading...</em></p>
+
+<div class='navbar-collapse collapse'>
+  <div class="row">
+    <div class="panel panel-default">
+      <h2 class="panel-heading">Books List</h2>
+    </div>
+    <table class='table' *ngIf="forecasts">
+      <thead>
+        <tr>
+          <th>BookID</th>
+          <th>Title</th>
+          <th>Year</th>
+          <th>Genre</th>
+          <th>Price</th>
+          <th>Author</th>
+          <th>Details</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let book of books"
+            [class.selected]="book === selectedBook"
+            (click)="onSelect(book)">
+          <td>{{ book.id }}</td>
+          <td>{{ book.title }}</td>
+          <td>{{ book.year }}</td>
+          <td>{{ book.genre }}</td>
+          <td>{{ book.price }}</td>
+          <td>{{ book.authorName}}</td>
+          <td>
+            <a routerLink="/detail/{{book.id}}">Details</a>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div>
+      <a routerLink="/create">Create</a>
+  </div>
+  <!--<div *ngIf="toAddBook == true">
+    <h2> Add a book </h2>
+    <div class="form-group">
+      <label for="inputAuthor" class="col-sm-2 control-label">Title:</label>
+      <input #bookTitle placeholder="title">
+    </div>
+    <div class="form-group">
+      <label for="inputAuthor" class="col-sm-2 control-label">Year:</label>
+      <input #bookYear placeholder="year">
+    </div>
+    <div class="form-group">
+      <label for="inputAuthor" class="col-sm-2 control-label">Genre:</label>
+      <input #bookGenre placeholder="genre">
+    </div>
+    <div class="form-group">
+      <label for="inputAuthor" class="col-sm-2 control-label">Price:</label>
+      <input #bookPrice placeholder="price">
+    </div>
+    <div class="form-group">
+      <label for="selectAuthor" class="col-sm-2 control-label">Author:</label>
+      <select [(ngModel)]="newBookAuthorId">
+        <option *ngFor="let item of authors" [ngValue]="item.id">{{item.name}}</option>
+      </select>
+    </div>
+    <button (click)="addBook(bookTitle.value, bookYear.value, bookGenre.value, bookPrice.value, newBookAuthorId);bookTitle.value=''; bookYear.value=''; bookGenre.value=''; bookPrice.value='';">add</button>
+  </div>-->
+  <!--<div *ngIf="selectedBook">
+    <h2> {{selectedBook.title}} Book Details </h2>
+    <div class="form-group">
+      <label for="inputAuthor" class="col-sm-2 control-label">id:</label>
+      <span placeholder="title">{{selectedBook.id}}</span>
+    </div>
+    <div class="form-group">
+      <label for="inputAuthor" class="col-sm-2 control-label">title:</label>
+      <input [(ngModel)]="book.title" placeholder="title">
+    </div>
+    <div class="form-group">
+      <label for="inputAuthor" class="col-sm-2 control-label">year:</label>
+      <input [(ngModel)]="book.year" placeholder="year">
+    </div>
+    <div class="form-group">
+      <label for="inputAuthor" class="col-sm-2 control-label">genre:</label>
+      <input [(ngModel)]="book.genre" placeholder="genre">
+    </div>
+    <div class="form-group">
+      <label for="inputAuthor" class="col-sm-2 control-label">price:</label>
+      <input [(ngModel)]="book.price" placeholder="price">
+    </div>
+    <div class="form-group">
+      <label for="selectAuthor" class="col-sm-2 control-label">author:</label>
+      <select [(ngModel)]="book.authorId">
+        <option *ngFor="let item of authors" [ngValue]="item.id">{{item.name}}</option>
+      </select>
+    </div>
+    <button (click)="save()">save</button>
+  </div>-->
+  </div>
+
+
