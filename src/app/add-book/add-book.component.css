@@ -1,0 +1,21 @@
+label {
+    /*background-color: #4189C7;*/
+    color: #4189C7;
+  }
+  
+  h2 {
+    color: #607D8B;
+    font-weight: bold;
+  }
+  input {
+    height: 2em;
+    font-size: 1em;
+    padding-left: .4em;
+  }
+  
+  select {
+    height: 2em;
+    font-size: 1em;
+    padding-left: .4em;
+  }
+  

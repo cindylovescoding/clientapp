@@ -5,7 +5,7 @@
     <div class="panel panel-default">
       <h2 class="panel-heading">Books List</h2>
     </div>
-    <table class='table' *ngIf="forecasts">
+    <table class='table table-hover' *ngIf="forecasts">
       <thead>
         <tr>
           <th>BookID</th>
@@ -35,7 +35,7 @@
     </table>
   </div>
   <div>
-      <a routerLink="/create">Create</a>
+    <a routerLink="/create">Create</a>
   </div>
   <!--<div *ngIf="toAddBook == true">
     <h2> Add a book </h2>

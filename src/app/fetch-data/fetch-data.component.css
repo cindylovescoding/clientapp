@@ -12,6 +12,12 @@
   padding-left: .4em;
 }*/
 
+
+h2 {
+  color: #607D8B;
+  font-weight: bold;
+}
+
 button {
   margin-top: 20px;
   font-family: Arial;
@@ -21,6 +27,10 @@ button {
   border-radius: 4px;
   cursor: pointer;
   cursor: hand;
+}
+
+th {
+  background-color: lightgray;
 }
 
   button:hover {

@@ -1,23 +1,25 @@
 <div *ngIf="book">
-  <h2> {{book.title}} Book Details </h2>
+  <div class="panel panel-default">
+    <h2 class="panel-heading">{{book.title}} Book Details </h2>
+  </div>
   <div class="form-group">
-    <label for="inputAuthor" class="col-sm-2 control-label">id:</label>
+    <label for="inputAuthor" class="col-sm-2 control-label">Id:</label>
     <span placeholder="title">{{book.id}}</span>
   </div>
   <div class="form-group">
-    <label for="inputAuthor" class="col-sm-2 control-label">title:</label>
+    <label for="inputAuthor" class="col-sm-2 control-label">Title:</label>
     <input [(ngModel)]="book.title" placeholder="title">
   </div>
   <div class="form-group">
-    <label for="inputAuthor" class="col-sm-2 control-label">year:</label>
+    <label for="inputAuthor" class="col-sm-2 control-label">Year:</label>
     <input [(ngModel)]="book.year" placeholder="year">
   </div>
   <div class="form-group">
-    <label for="inputAuthor" class="col-sm-2 control-label">genre:</label>
+    <label for="inputAuthor" class="col-sm-2 control-label">Genre:</label>
     <input [(ngModel)]="book.genre" placeholder="genre">
   </div>
   <div class="form-group">
-    <label for="inputAuthor" class="col-sm-2 control-label">price:</label>
+    <label for="inputAuthor" class="col-sm-2 control-label">Price:</label>
     <input [(ngModel)]="book.price" placeholder="price">
   </div>
   <!--<div class="form-group">
@@ -25,14 +27,14 @@
     <input [(ngModel)]="book.authorName" placeholder="author">
   </div>-->
   <div class="form-group">
-    <label for="selectAuthor" class="col-sm-2 control-label">author:</label>
+    <label for="selectAuthor" class="col-sm-2 control-label">Author:</label>
     <!--<select data-bind="options:authors, optionsText: 'Name', value: book.authorName"></select>-->
     <!--<select [(ngModel)]="book.authorName">-->
     <select [(ngModel)]="book.authorId">
       <option *ngFor="let item of authors" [ngValue]="item.id">{{item.name}}</option>
     </select>
   </div>
-  <button (click)="save()">save</button>
-  <button (click)="goBack()">go back</button>
+  <button (click)="save()" class="btn btn-success">save</button>
+  <button (click)="goBack()" class="btn btn-warning">go back</button>
 </div>
 
